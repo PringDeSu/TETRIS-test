@@ -113,6 +113,7 @@ public:
 		bool ml = keyboard.pulsed(setting.key_left), mr = keyboard.pulsed(setting.key_right);
 		bool mu = keyboard.pulsed(setting.key_up), md = keyboard.pulsed(setting.key_down);
 		bool set = keyboard.pulsed(setting.key_set), cls = keyboard.pulsed(setting.key_close);
+		if (keyboard.hold_frames(setting.key_reset) == 20) game = Game_Board();
 		if (ml) game.move(Vector2i(-1, 0));
 		if (mr) game.move(Vector2i(1, 0));
 		if (mu) game.move(Vector2i(0, -1));
